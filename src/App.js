@@ -11,14 +11,12 @@ function App() {
           <div className="form__body">
             <span className="form__field">Kwota</span>
             <div className="form__inputValue">
-              <label>
                 <input
                   className="form__field form__field--input"
                   type="number"
                   name="inputAmount"
                   placeholder="0.00"
                 />
-              </label>
               <select
                 className="form__field form__field--select"
                 name="currency"

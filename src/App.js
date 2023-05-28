@@ -10,7 +10,7 @@ function App() {
 
       <Form />
 
-      <Footer />
+      <Footer footerInfo="Copyright © 2023 Krystian Gręblowski" />
     </Container>
   );
 }

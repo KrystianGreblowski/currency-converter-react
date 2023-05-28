@@ -3,20 +3,17 @@ import Legend from "./Legend";
 import Label from "./Label";
 import ExchangeRate from "./ExchangeRate";
 import Result from "./Result";
+import Input from "./Input";
 
 const Form = () => (
   <form className="form">
     <fieldset className="form__fieldset">
       <Legend title="Przelicznik EUR/PLN" />
+
       <div className="form__body">
         <Label title="Kwota" />
         <div className="form__inputValue">
-          <input
-            className="form__field form__field--input"
-            type="number"
-            name="inputAmount"
-            placeholder="0.00"
-          />
+          <Input />
           <select className="form__field form__field--select" name="currency">
             <option value="eur" selected>
               EUR

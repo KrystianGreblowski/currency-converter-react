@@ -1,15 +1,17 @@
 import Form from "./Form";
 import Header from "./Header";
+import Footer from "./Footer";
+import Container from "./Container";
 
 function App() {
   return (
-    <div className="container">
+    <Container>
       <Header />
 
       <Form />
 
-      <footer className="footer">Copyright © 2023 Krystian Gręblowski</footer>
-    </div>
+      <Footer />
+    </Container>
   );
 }
 

@@ -7,9 +7,7 @@ function App() {
   return (
     <Container>
       <Header title="Kalkulator waluty Euro" />
-
       <Form />
-
       <Footer footerInfo="Copyright © 2023 Krystian Gręblowski" />
     </Container>
   );

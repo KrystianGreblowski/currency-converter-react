@@ -1,9 +1,10 @@
 import "./style.css";
+import Legend from "./Legend";
 
 const Form = () => (
   <form className="form">
     <fieldset className="form__fieldset">
-      <legend className="form__legend">Przelicznik EUR/PLN</legend>
+      <Legend title="Przelicznik EUR/PLN" />
       <div className="form__body">
         <span className="form__field">Kwota</span>
         <div className="form__inputValue">

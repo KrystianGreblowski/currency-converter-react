@@ -1,11 +1,10 @@
 import Form from "./Form";
+import Header from "./Header";
 
 function App() {
   return (
     <div className="container">
-      <header className="header">
-        <h1 className="header__title">Kalkulator waluty Euro</h1>
-      </header>
+      <Header />
 
       <Form />
 

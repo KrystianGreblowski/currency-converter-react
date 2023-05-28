@@ -6,7 +6,7 @@ import Container from "./Container";
 function App() {
   return (
     <Container>
-      <Header />
+      <Header title="Kalkulator waluty Euro" />
 
       <Form />
 

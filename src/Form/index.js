@@ -1,12 +1,13 @@
 import "./style.css";
 import Legend from "./Legend";
+import Label from "./Label";
 
 const Form = () => (
   <form className="form">
     <fieldset className="form__fieldset">
       <Legend title="Przelicznik EUR/PLN" />
       <div className="form__body">
-        <span className="form__field">Kwota</span>
+        <Label title="Kwota" />
         <div className="form__inputValue">
           <input
             className="form__field form__field--input"
@@ -21,9 +22,9 @@ const Form = () => (
             <option value="pln">PLN</option>
           </select>
         </div>
-        <span className="form__field">Kurs</span>
+        <Label title="Kurs" />
         <span className="form__field"></span>
-        <span className="form__field">Wynik</span>
+        <Label title="Wynik" />
         <span className="form__field form__field--result">0.00 PLN</span>
       </div>
     </fieldset>

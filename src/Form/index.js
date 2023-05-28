@@ -2,6 +2,7 @@ import "./style.css";
 import Legend from "./Legend";
 import Label from "./Label";
 import ExchangeRate from "./ExchangeRate";
+import Result from "./Result";
 
 const Form = () => (
   <form className="form">
@@ -26,7 +27,7 @@ const Form = () => (
         <Label title="Kurs" />
         <ExchangeRate eurRate="4.8991" plnRate="0.2333" />
         <Label title="Wynik" />
-        <span className="form__field form__field--result">0.00 PLN</span>
+        <Result />
       </div>
     </fieldset>
   </form>

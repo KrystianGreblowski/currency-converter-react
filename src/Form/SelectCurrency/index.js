@@ -1,6 +1,6 @@
 const SelectCurrency = () => (
   <select className="form__field form__field--select" name="currency">
-    <option value="eur" selected>
+    <option value="eur">
       EUR
     </option>
     <option value="pln">PLN</option>

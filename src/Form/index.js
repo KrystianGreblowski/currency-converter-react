@@ -21,6 +21,7 @@ const Form = () => (
 
         <Label title="Kurs" />
         <ExchangeRate eurRate="4.8991" plnRate="0.2333" />
+
         <Label title="Wynik" />
         <Result />
       </div>

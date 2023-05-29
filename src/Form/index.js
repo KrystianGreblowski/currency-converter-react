@@ -1,10 +1,10 @@
 import "./style.css";
 import Legend from "./Legend";
 import Label from "./Label";
+import InputData from "./InputData";
+import SelectCurrency from "./SelectCurrency";
 import ExchangeRate from "./ExchangeRate";
 import Result from "./Result";
-import Input from "./Input";
-import SelectCurrency from "./SelectCurrency";
 
 const Form = () => (
   <form className="form">
@@ -15,7 +15,7 @@ const Form = () => (
         <Label title="Kwota" />
 
         <div className="form__inputValue">
-          <Input />
+          <InputData />
           <SelectCurrency />
         </div>
 

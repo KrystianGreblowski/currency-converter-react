@@ -35,7 +35,7 @@ const Form = () => {
 
             <select className="form__field form__field--select">
               {currencies.map(({ id, currency }) => (
-                <option id={id}>{currency}</option>
+                <option key={id}>{currency}</option>
               ))}
             </select>
           </div>

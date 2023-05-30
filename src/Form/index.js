@@ -1,29 +1,27 @@
 import "./style.css";
-import Legend from "./Legend";
-import Label from "./Label";
-import InputData from "./InputData";
-import SelectCurrency from "./SelectCurrency";
-import ExchangeRate from "./ExchangeRate";
-import Result from "./Result";
 
 const Form = () => (
   <form className="form">
     <fieldset className="form__fieldset">
-      <Legend title="Przelicznik EUR/PLN" />
+      <legend className="form__legend">Przelicznik EUR/PLN</legend>
 
       <div className="form__body">
-        <Label title="Kwota" />
+        <span className="form__field">Kwota</span>
 
         <div className="form__inputValue">
-          <InputData />
-          <SelectCurrency />
+          <input className="form__field form__field--input" />
+
+          <select className="form__field form__field--select">
+            <option value="eur">EUR</option>
+            <option value="pln">PLN</option>
+          </select>
         </div>
 
-        <Label title="Kurs" />
-        <ExchangeRate eurRate="4.8991" plnRate="0.2333" />
+        <span className="form__field">Kurs</span>
+        <span className="form__field"></span>
 
-        <Label title="Wynik" />
-        <Result />
+        <span className="form__field">Wynik</span>
+        <span className="form__field form__field--result">0.00 PLN</span>
       </div>
     </fieldset>
   </form>

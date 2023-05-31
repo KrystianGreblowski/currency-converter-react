@@ -31,6 +31,7 @@ const Form = () => {
               placeholder="0.00"
               value={inputValue}
               onChange={({ target }) => setInputValue(target.value)}
+              type="number"
             />
 
             <select className="form__field form__field--select">
@@ -44,7 +45,7 @@ const Form = () => {
           <span className="form__field"></span>
 
           <span className="form__field">Wynik</span>
-          <span className="form__field form__field--result">0.00 PLN</span>
+          <span className="form__field form__field--result">{inputValue*currencies[0].rate}</span>
         </div>
       </fieldset>
     </form>

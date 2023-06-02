@@ -1,20 +1,8 @@
 import "./style.css";
 import { useState } from "react";
+import { currencies } from "./currencies";
 
 const Form = () => {
-  const currencies = [
-    {
-      id: 1,
-      currency: "EUR",
-      rate: 4.5099,
-    },
-    {
-      id: 2,
-      currency: "PLN",
-      rate: 0.2211,
-    },
-  ];
-
   const [inputValue, setInputValue] = useState("");
   const [rate, setRate] = useState(currencies[0].rate);
   const [currency, setCurrency] = useState(currencies[0].currency);

@@ -48,11 +48,13 @@ const Form = () => {
           </div>
 
           <span className="form__field">Kurs</span>
+
           <span className="form__field">
             1 {currency} = {rate} {currency === "EUR" ? "PLN" : "EUR"}
           </span>
 
           <span className="form__field">Wynik</span>
+
           <span className="form__field form__field--result">
             {calculateResult()}{" "}
             {currency === currencies[0].currencyName

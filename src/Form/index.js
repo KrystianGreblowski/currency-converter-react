@@ -15,6 +15,12 @@ const Form = () => {
       : setRate(currencies[0].rate);
   };
 
+  const toggleCurrencyName = () => {
+    return currency === currencies[0].currencyName
+      ? currencies[1].currencyName
+      : currencies[0].currencyName;
+  };
+
   const calculateResult = () => {
     const result = (inputValue * rate).toFixed(2);
     return result > 0 ? result : "0.00";
@@ -31,10 +37,10 @@ const Form = () => {
           <div className="form__inputValue">
             <input
               className="form__field form__field--input"
-              placeholder="0.00"
               value={inputValue}
               onChange={({ target }) => setInputValue(target.value)}
               type="number"
+              placeholder="0.00"
             />
 
             <select
@@ -53,16 +59,13 @@ const Form = () => {
           <span className="form__field">Kurs</span>
 
           <span className="form__field">
-            1 {currency} = {rate} {currency === "EUR" ? "PLN" : "EUR"}
+            1 {currency} = {rate} {toggleCurrencyName()}
           </span>
 
           <span className="form__field">Wynik</span>
 
           <span className="form__field form__field--result">
-            {calculateResult()}{" "}
-            {currency === currencies[0].currencyName
-              ? currencies[1].currencyName
-              : currencies[0].currencyName}
+            {calculateResult()} {toggleCurrencyName()}
           </span>
         </div>
       </fieldset>

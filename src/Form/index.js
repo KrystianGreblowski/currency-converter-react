@@ -2,20 +2,32 @@ import "./style.css";
 import { useState } from "react";
 
 const Form = () => {
-  const [inputValue, setInputValue] = useState("");
-
   const currencies = [
     {
       id: 1,
       currency: "EUR",
-      rate: 0.2211,
+      rate: 4.5099,
     },
     {
       id: 2,
       currency: "PLN",
-      rate: 4.5559,
+      rate: 0.2211,
     },
   ];
+
+  const [inputValue, setInputValue] = useState("");
+  const [rate, setRate] = useState(currencies[0].rate);
+  const [currency, setCurrency] = useState(currencies[0].currency);
+
+  const calculateResult = (inputValue, rate) => (inputValue * rate).toFixed(2);
+
+  const onSelectCurrency = ({ target }) => {
+    setCurrency(target.value);
+
+    currency === currencies[0].currency
+      ? setRate(currencies[1].rate)
+      : setRate(currencies[0].rate);
+  };
 
   return (
     <form className="form">
@@ -34,9 +46,15 @@ const Form = () => {
               type="number"
             />
 
-            <select className="form__field form__field--select">
+            <select
+              className="form__field form__field--select"
+              value={currency}
+              onChange={onSelectCurrency}
+            >
               {currencies.map(({ id, currency }) => (
-                <option key={id}>{currency}</option>
+                <option key={id} value={currency}>
+                  {currency}
+                </option>
               ))}
             </select>
           </div>
@@ -45,7 +63,12 @@ const Form = () => {
           <span className="form__field"></span>
 
           <span className="form__field">Wynik</span>
-          <span className="form__field form__field--result">{inputValue*currencies[0].rate}</span>
+          <span className="form__field form__field--result">
+            {calculateResult(inputValue, rate)}{" "}
+            {currency === currencies[0].currency
+              ? currencies[1].currency
+              : currencies[0].currency}
+          </span>
         </div>
       </fieldset>
     </form>

@@ -1,12 +1,12 @@
 export const currencies = [
   {
     id: 1,
-    currency: "EUR",
+    currencyName: "EUR",
     rate: 4.5099,
   },
   {
     id: 2,
-    currency: "PLN",
+    currencyName: "PLN",
     rate: 0.2211,
   },
 ];

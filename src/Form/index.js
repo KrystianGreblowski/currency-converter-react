@@ -5,14 +5,14 @@ import { currencies } from "./currencies";
 const Form = () => {
   const [inputValue, setInputValue] = useState("");
   const [rate, setRate] = useState(currencies[0].rate);
-  const [currency, setCurrency] = useState(currencies[0].currency);
+  const [currency, setCurrency] = useState(currencies[0].currencyName);
 
   const calculateResult = () => (inputValue * rate).toFixed(2);
 
   const onSelectCurrency = ({ target }) => {
     setCurrency(target.value);
 
-    currency === currencies[0].currency
+    currency === currencies[0].currencyName
       ? setRate(currencies[1].rate)
       : setRate(currencies[0].rate);
   };
@@ -39,9 +39,9 @@ const Form = () => {
               value={currency}
               onChange={onSelectCurrency}
             >
-              {currencies.map(({ id, currency }) => (
-                <option key={id} value={currency}>
-                  {currency}
+              {currencies.map(({ id, currencyName }) => (
+                <option key={id} value={currencyName}>
+                  {currencyName}
                 </option>
               ))}
             </select>
@@ -55,9 +55,9 @@ const Form = () => {
           <span className="form__field">Wynik</span>
           <span className="form__field form__field--result">
             {calculateResult()}{" "}
-            {currency === currencies[0].currency
-              ? currencies[1].currency
-              : currencies[0].currency}
+            {currency === currencies[0].currencyName
+              ? currencies[1].currencyName
+              : currencies[0].currencyName}
           </span>
         </div>
       </fieldset>

@@ -7,7 +7,7 @@ const Form = () => {
   const [rate, setRate] = useState(currencies[0].rate);
   const [currency, setCurrency] = useState(currencies[0].currency);
 
-  const calculateResult = (inputValue, rate) => (inputValue * rate).toFixed(2);
+  const calculateResult = () => (inputValue * rate).toFixed(2);
 
   const onSelectCurrency = ({ target }) => {
     setCurrency(target.value);
@@ -54,7 +54,7 @@ const Form = () => {
 
           <span className="form__field">Wynik</span>
           <span className="form__field form__field--result">
-            {calculateResult(inputValue, rate)}{" "}
+            {calculateResult()}{" "}
             {currency === currencies[0].currency
               ? currencies[1].currency
               : currencies[0].currency}

@@ -15,7 +15,10 @@ const Form = () => {
       : setRate(currencies[0].rate);
   };
 
-  const calculateResult = () => (inputValue * rate).toFixed(2);
+  const calculateResult = () => {
+    const result = (inputValue * rate).toFixed(2);
+    return result > 0 ? result : "0.00";
+  };
 
   return (
     <form className="form">

@@ -54,6 +54,7 @@
 .form__field--select {
 	padding: 5px;
 	cursor: pointer;
+	transition: 0.2s;
 }
 
 .form__field--select:hover {

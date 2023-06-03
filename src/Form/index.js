@@ -5,20 +5,20 @@ import { currencies } from "./currencies";
 const Form = () => {
   const [inputValue, setInputValue] = useState("");
   const [rate, setRate] = useState(currencies[0].rate);
-  const [currency, setCurrency] = useState(currencies[0].currencyName);
+  const [currency, setCurrency] = useState(currencies[0].name);
 
   const onSelectCurrency = ({ target }) => {
     setCurrency(target.value);
 
-    currency === currencies[0].currencyName
+    currency === currencies[0].name
       ? setRate(currencies[1].rate)
       : setRate(currencies[0].rate);
   };
 
   const toggleCurrencyName = () => {
-    return currency === currencies[0].currencyName
-      ? currencies[1].currencyName
-      : currencies[0].currencyName;
+    return currency === currencies[0].name
+      ? currencies[1].name
+      : currencies[0].name;
   };
 
   const calculateResult = () => {
@@ -48,9 +48,9 @@ const Form = () => {
               value={currency}
               onChange={onSelectCurrency}
             >
-              {currencies.map(({ id, currencyName }) => (
-                <option key={id} value={currencyName}>
-                  {currencyName}
+              {currencies.map(({ id, name }) => (
+                <option key={id} value={name}>
+                  {name}
                 </option>
               ))}
             </select>

@@ -12,7 +12,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Preview
 
-![Currency converter demo](images/demo.gif)
+![Currency converter demo](https://i.postimg.cc/y8ZTxBy5/demo.gif)
 
 ## Technologies
 - React

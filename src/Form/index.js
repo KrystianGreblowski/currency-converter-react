@@ -7,18 +7,21 @@ const Form = () => {
   const [rate, setRate] = useState(currencies[0].rate);
   const [currency, setCurrency] = useState(currencies[0].name);
 
-  const onSelectCurrency = ({ target }) => {
-    setCurrency(target.value);
+  const toggleCurrencyName = () => {
+    return currency === currencies[0].name
+      ? currencies[1].name
+      : currencies[0].name;
+  };
 
+  const toggleCurrencyRate = () => {
     currency === currencies[0].name
       ? setRate(currencies[1].rate)
       : setRate(currencies[0].rate);
   };
 
-  const toggleCurrencyName = () => {
-    return currency === currencies[0].name
-      ? currencies[1].name
-      : currencies[0].name;
+  const onSelectCurrency = ({ target }) => {
+    setCurrency(target.value);
+    toggleCurrencyRate();
   };
 
   const calculateResult = () => {

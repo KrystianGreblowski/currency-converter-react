@@ -8,7 +8,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Demo
 
-[Currency converter](https://krystiangreblowski.github.io/currency-converter/)
+[Currency converter](https://krystiangreblowski.github.io/currency-converter-react/)
 
 ## Preview
 

@@ -6,7 +6,7 @@ import Container from "./Container";
 function App() {
   return (
     <Container>
-      <Header title="Kalkulator waluty Euro" />
+      <Header />
       <Form />
       <Footer footerInfo="Copyright © 2023 Krystian Gręblowski" />
     </Container>

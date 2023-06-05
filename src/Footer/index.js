@@ -1,7 +1,7 @@
 import "./style.css";
 
-const Footer = ({ footerInfo }) => (
-  <footer className="footer">{footerInfo}</footer>
+const Footer = () => (
+  <footer className="footer">Copyright © 2023 Krystian Gręblowski</footer>
 );
 
 export default Footer;

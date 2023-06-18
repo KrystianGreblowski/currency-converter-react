@@ -1,13 +1,30 @@
 import "./style.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { currencies } from "./currencies";
 
 const Form = () => {
   const [inputValue, setInputValue] = useState("");
   const [rate, setRate] = useState(currencies[0].rate);
   const [currency, setCurrency] = useState(currencies[0].name);
+  const [currentDate, setCurrentDate] = useState(new Date());
 
-  const myDate = new Date();
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentDate((currentDate) => (currentDate = new Date()));
+    }, 1000);
+
+    return () => clearInterval(intervalId);
+  });
+
+  const showCurrentDate = () =>
+    currentDate.toLocaleDateString("pl", {
+      month: "long",
+      weekday: "long",
+      day: "numeric",
+      hour: "numeric",
+      minute: "numeric",
+      second: "numeric",
+    });
 
   const toggleCurrencyName = () => {
     return currency === currencies[0].name
@@ -31,24 +48,13 @@ const Form = () => {
     return result > 0 ? result : "0.00";
   };
 
-  const currentDate = () =>
-    myDate.toLocaleDateString("pl", {
-      month: "long",
-      weekday: "long",
-      day: "numeric",
-    });
-
-  const currentTime = () => myDate.toLocaleTimeString("pl");
-
   return (
     <form className="form">
       <fieldset className="form__fieldset">
         <legend className="form__legend">Przelicznik EUR/PLN</legend>
 
         <div className="form__body">
-          <span className="form__date">
-            Dzisiaj jest {currentDate()}, {currentTime()}
-          </span>
+          <span className="form__date">Dzisiaj jest {showCurrentDate()}</span>
 
           <span className="form__field">Kwota</span>
 

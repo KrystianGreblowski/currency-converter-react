@@ -14,7 +14,7 @@ const Form = () => {
     }, 1000);
 
     return () => clearInterval(intervalId);
-  });
+  }, []);
 
   const showCurrentDate = () =>
     currentDate.toLocaleDateString("pl", {

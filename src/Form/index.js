@@ -7,6 +7,8 @@ const Form = () => {
   const [rate, setRate] = useState(currencies[0].rate);
   const [currency, setCurrency] = useState(currencies[0].name);
 
+  const myDate = new Date();
+
   const toggleCurrencyName = () => {
     return currency === currencies[0].name
       ? currencies[1].name
@@ -29,12 +31,25 @@ const Form = () => {
     return result > 0 ? result : "0.00";
   };
 
+  const currentDate = () =>
+    myDate.toLocaleDateString("pl", {
+      month: "long",
+      weekday: "long",
+      day: "numeric",
+    });
+
+  const currentTime = () => myDate.toLocaleTimeString("pl");
+
   return (
     <form className="form">
       <fieldset className="form__fieldset">
         <legend className="form__legend">Przelicznik EUR/PLN</legend>
 
         <div className="form__body">
+          <span>
+            Dzisiaj jest {currentDate()}, {currentTime()}
+          </span>
+
           <span className="form__field">Kwota</span>
 
           <div className="form__inputValue">

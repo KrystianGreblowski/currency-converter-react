@@ -46,7 +46,7 @@ const Form = () => {
         <legend className="form__legend">Przelicznik EUR/PLN</legend>
 
         <div className="form__body">
-          <span>
+          <span className="form__date">
             Dzisiaj jest {currentDate()}, {currentTime()}
           </span>
 

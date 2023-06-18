@@ -67,17 +67,3 @@
 	color: white;
 	border: none;
 }
-
-.form__date {
-	color: #989696;
-	font-size: 14px;
-	grid-column: span 2;
-	justify-self: right;
-}
-
-@media (max-width: 767px) {
-	.form__date {
-		grid-column: span 1;
-		justify-self: center;
-	}
-}

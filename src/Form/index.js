@@ -30,8 +30,10 @@ const Form = () => {
     return result > 0 ? result : "0.00";
   };
 
+  const onFormSubmit = (event) => event.preventDefault();
+
   return (
-    <form className="form">
+    <form className="form" onSubmit={onFormSubmit}>
       <fieldset className="form__fieldset">
         <legend className="form__legend">Przelicznik EUR/PLN</legend>
 

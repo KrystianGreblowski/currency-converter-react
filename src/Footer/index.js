@@ -1,7 +1,7 @@
-import "./style.css";
+import { StyledFooter } from "./styled";
 
 const Footer = () => (
-  <footer className="footer">Copyright © 2023 Krystian Gręblowski</footer>
+  <StyledFooter>Copyright © 2023 Krystian Gręblowski</StyledFooter>
 );
 
 export default Footer;

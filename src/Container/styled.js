@@ -1,0 +1,11 @@
+import styled from "styled-components";
+
+export const Main = styled.main`
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  align-items: center;
+  max-width: 1000px;
+  min-height: 100vh;
+  margin: auto;
+  padding: 5px;
+`;

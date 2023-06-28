@@ -1,4 +1,14 @@
-import "./style.css";
+import {
+  StyledForm,
+  Fieldset,
+  Legend,
+  Content,
+  Label,
+  Input,
+  Select,
+  Result,
+  Container,
+} from "./styled";
 import { useState } from "react";
 import { currencies } from "./currencies";
 import CurrentDate from "./CurrentDate";
@@ -33,51 +43,46 @@ const Form = () => {
   const onFormSubmit = (event) => event.preventDefault();
 
   return (
-    <form className="form" onSubmit={onFormSubmit}>
-      <fieldset className="form__fieldset">
-        <legend className="form__legend">Przelicznik EUR/PLN</legend>
+    <StyledForm onSubmit={onFormSubmit}>
+      <Fieldset>
+        <Legend>Przelicznik EUR/PLN</Legend>
 
-        <div className="form__body">
+        <Content>
           <CurrentDate />
 
-          <span className="form__field">Kwota</span>
+          <Label>Kwota</Label>
 
-          <div className="form__inputValue">
-            <input
-              className="form__field form__field--input"
+          <Container>
+            <Input
               value={inputValue}
               onChange={({ target }) => setInputValue(target.value)}
               type="number"
               placeholder="0.00"
             />
 
-            <select
-              className="form__field form__field--select"
-              value={currency}
-              onChange={onSelectCurrency}
-            >
+            <Select value={currency} onChange={onSelectCurrency}>
               {currencies.map(({ id, name }) => (
                 <option key={id} value={name}>
                   {name}
                 </option>
               ))}
-            </select>
-          </div>
+            </Select>
+          </Container>
 
-          <span className="form__field">Kurs</span>
+          <Label>Kurs</Label>
 
-          <span className="form__field">
+          <Label>
             1 {currency} = {rate} {toggleCurrencyName()}
-          </span>
+          </Label>
 
-          <span className="form__field">Wynik</span>
+          <Label>Wynik</Label>
 
-          <span className="form__field form__field--result">
+          <Result>
             {calculateResult()} {toggleCurrencyName()}
-          </span>
-        </div>
-      </fieldset>
-    </form>
+          </Result>
+        </Content>
+      </Fieldset>
+    </StyledForm>
   );
 };
 

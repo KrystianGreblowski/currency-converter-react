@@ -1,0 +1,79 @@
+import styled from "styled-components";
+
+export const StyledForm = styled.form`
+  max-width: 400px;
+  justify-self: center;
+`;
+
+export const Fieldset = styled.fieldset`
+  background-color: #fcfbfb;
+  border: 1px solid #aaa;
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px hsl(0, 0%, 50%);
+`;
+
+export const Legend = styled.legend`
+  padding: 8px;
+  background-color: #eb3d3d;
+  color: white;
+  font-size: 17px;
+  border-radius: 3px;
+  box-shadow: 1px 1px 3px hsl(0, 81%, 26%);
+`;
+
+export const Content = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 10px;
+
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+`;
+
+export const Label = styled.span`
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 6px;
+  box-shadow: 1px 1px 3px #706f6f;
+  text-align: center;
+  background-color: #eee;
+`;
+
+export const Result = styled(Label)`
+  background-color: #eb3d3d;
+  box-shadow: 1px 1px 3px hsl(0, 81%, 26%);
+  color: white;
+  border: none;
+`;
+
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+`;
+
+export const Input = styled.input`
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 6px;
+  box-shadow: 1px 1px 3px #706f6f;
+  text-align: center;
+  background-color: white;
+`;
+
+export const Select = styled.select`
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 5px;
+  box-shadow: 1px 1px 3px #706f6f;
+  text-align: center;
+  background-color: #eee;
+  cursor: pointer;
+  transition: 0.2s;
+
+  &:hover {
+    background-color: hsl(0, 0%, 85%);
+  }
+`;

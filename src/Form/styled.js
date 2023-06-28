@@ -32,6 +32,12 @@ export const Content = styled.div`
   }
 `;
 
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 10px;
+`;
+
 export const Label = styled.span`
   border: 1px solid #ccc;
   border-radius: 3px;
@@ -41,39 +47,23 @@ export const Label = styled.span`
   background-color: #eee;
 `;
 
-export const Result = styled(Label)`
-  background-color: ${({ theme }) => theme.backgroundColor};
-  color: ${({ theme }) => theme.fontColor};
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.shadowColor};
-  border: none;
-`;
-
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 10px;
-`;
-
-export const Input = styled.input`
-  border: 1px solid #ccc;
-  border-radius: 3px;
-  padding: 6px;
-  box-shadow: 1px 1px 3px #706f6f;
-  text-align: center;
+export const Input = styled(Label)`
   background-color: white;
 `;
 
-export const Select = styled.select`
-  border: 1px solid #ccc;
-  border-radius: 3px;
+export const Select = styled(Label)`
   padding: 5px;
-  box-shadow: 1px 1px 3px #706f6f;
-  text-align: center;
-  background-color: #eee;
   cursor: pointer;
   transition: 0.2s;
 
   &:hover {
     background-color: hsl(0, 0%, 85%);
   }
+`;
+
+export const Result = styled(Label)`
+  background-color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.fontColor};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.shadowColor};
+  border: none;
 `;

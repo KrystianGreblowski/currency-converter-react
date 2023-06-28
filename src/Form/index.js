@@ -57,13 +57,14 @@ const Form = () => {
 
             <Container>
               <Input
+                as="input"
                 value={inputValue}
                 onChange={({ target }) => setInputValue(target.value)}
                 type="number"
                 placeholder="0.00"
               />
 
-              <Select value={currency} onChange={onSelectCurrency}>
+              <Select as="select" value={currency} onChange={onSelectCurrency}>
                 {currencies.map(({ id, name }) => (
                   <option key={id} value={name}>
                     {name}

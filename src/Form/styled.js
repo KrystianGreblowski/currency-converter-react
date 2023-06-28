@@ -15,11 +15,11 @@ export const Fieldset = styled.fieldset`
 
 export const Legend = styled.legend`
   padding: 8px;
-  background-color: #eb3d3d;
-  color: white;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.fontColor};
   font-size: 17px;
   border-radius: 3px;
-  box-shadow: 1px 1px 3px hsl(0, 81%, 26%);
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.shadowColor};
 `;
 
 export const Content = styled.div`
@@ -42,9 +42,9 @@ export const Label = styled.span`
 `;
 
 export const Result = styled(Label)`
-  background-color: #eb3d3d;
-  box-shadow: 1px 1px 3px hsl(0, 81%, 26%);
-  color: white;
+  background-color: ${({ theme }) => theme.backgroundColor};
+  color: ${({ theme }) => theme.fontColor};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.shadowColor};
   border: none;
 `;
 

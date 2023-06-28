@@ -12,6 +12,8 @@ import {
 import { useState } from "react";
 import { currencies } from "./currencies";
 import CurrentDate from "./CurrentDate";
+import { ThemeProvider } from "styled-components";
+import { theme } from "./theme";
 
 const Form = () => {
   const [inputValue, setInputValue] = useState("");
@@ -43,46 +45,48 @@ const Form = () => {
   const onFormSubmit = (event) => event.preventDefault();
 
   return (
-    <StyledForm onSubmit={onFormSubmit}>
-      <Fieldset>
-        <Legend>Przelicznik EUR/PLN</Legend>
+    <ThemeProvider theme={theme}>
+      <StyledForm onSubmit={onFormSubmit}>
+        <Fieldset>
+          <Legend>Przelicznik EUR/PLN</Legend>
 
-        <Content>
-          <CurrentDate />
+          <Content>
+            <CurrentDate />
 
-          <Label>Kwota</Label>
+            <Label>Kwota</Label>
 
-          <Container>
-            <Input
-              value={inputValue}
-              onChange={({ target }) => setInputValue(target.value)}
-              type="number"
-              placeholder="0.00"
-            />
+            <Container>
+              <Input
+                value={inputValue}
+                onChange={({ target }) => setInputValue(target.value)}
+                type="number"
+                placeholder="0.00"
+              />
 
-            <Select value={currency} onChange={onSelectCurrency}>
-              {currencies.map(({ id, name }) => (
-                <option key={id} value={name}>
-                  {name}
-                </option>
-              ))}
-            </Select>
-          </Container>
+              <Select value={currency} onChange={onSelectCurrency}>
+                {currencies.map(({ id, name }) => (
+                  <option key={id} value={name}>
+                    {name}
+                  </option>
+                ))}
+              </Select>
+            </Container>
 
-          <Label>Kurs</Label>
+            <Label>Kurs</Label>
 
-          <Label>
-            1 {currency} = {rate} {toggleCurrencyName()}
-          </Label>
+            <Label>
+              1 {currency} = {rate} {toggleCurrencyName()}
+            </Label>
 
-          <Label>Wynik</Label>
+            <Label>Wynik</Label>
 
-          <Result>
-            {calculateResult()} {toggleCurrencyName()}
-          </Result>
-        </Content>
-      </Fieldset>
-    </StyledForm>
+            <Result>
+              {calculateResult()} {toggleCurrencyName()}
+            </Result>
+          </Content>
+        </Fieldset>
+      </StyledForm>
+    </ThemeProvider>
   );
 };
 

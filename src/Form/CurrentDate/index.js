@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import "./style.css";
+import { StyledCurrentDate } from "./styled";
 
 const CurrentDate = () => {
   const [currentDate, setCurrentDate] = useState(new Date());
@@ -22,7 +22,9 @@ const CurrentDate = () => {
       second: "numeric",
     });
 
-  return <span className="currentDate">Dzisiaj jest {showCurrentDate()}</span>;
+  return (
+    <StyledCurrentDate>Dzisiaj jest {showCurrentDate()}</StyledCurrentDate>
+  );
 };
 
 export default CurrentDate;

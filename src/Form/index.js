@@ -13,7 +13,7 @@ import { useState } from "react";
 import { currencies } from "./currencies";
 import CurrentDate from "./CurrentDate";
 import { ThemeProvider } from "styled-components";
-import { theme } from "./theme";
+import { theme } from "../theme"
 
 const Form = () => {
   const [inputValue, setInputValue] = useState("");

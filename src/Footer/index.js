@@ -1,6 +1,6 @@
 import { StyledFooter } from "./styled";
 import { ThemeProvider } from "styled-components";
-import { theme } from "../Form/theme";
+import { theme } from "../theme";
 
 const Footer = () => (
   <ThemeProvider theme={theme}>

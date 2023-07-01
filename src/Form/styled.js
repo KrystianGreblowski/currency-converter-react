@@ -15,11 +15,11 @@ export const Fieldset = styled.fieldset`
 
 export const Legend = styled.legend`
   padding: 8px;
-  background-color: ${({ theme }) => theme.backgroundColor};
-  color: ${({ theme }) => theme.fontColor};
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => theme.color.font};
   font-size: 17px;
   border-radius: 3px;
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.shadowColor};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
 `;
 
 export const Content = styled.div`
@@ -62,8 +62,8 @@ export const Select = styled(Label)`
 `;
 
 export const Result = styled(Label)`
-  background-color: ${({ theme }) => theme.backgroundColor};
-  color: ${({ theme }) => theme.fontColor};
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.shadowColor};
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => theme.color.font};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
   border: none;
 `;

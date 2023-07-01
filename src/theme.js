@@ -1,5 +1,7 @@
 export const theme = {
-  backgroundColor: "#eb3d3d",
-  fontColor: "white",
-  shadowColor: "#7a1818",
+  color: {
+    background: "#eb3d3d",
+    font: "white",
+    shadow: "#7a1818",
+  },
 };

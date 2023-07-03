@@ -6,7 +6,7 @@ export const StyledCurrentDate = styled.span`
   grid-column: span 2;
   justify-self: right;
 
-  @media (max-width: 767px) {
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     grid-column: span 1;
     justify-self: center;
   }

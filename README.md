@@ -2,7 +2,9 @@
 
 ## Description
 
-It's a simple currency converter for the euro and the Polish currency. It's a website I created as part of a project for the YouCode course.
+It's a currency converter for the euro and the Polish currency. 
+
+It's an application I created as part of a project for the YouCode Frontend Developer course.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -12,7 +14,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Preview
 
-![Currency converter demo](https://i.postimg.cc/4NFn6xPx/currency-converter-demo.gif)
+![Currency converter demo](https://i.postimg.cc/PxHGR9yP/currency-converter-demo.gif)
 
 ## Technologies
 - React

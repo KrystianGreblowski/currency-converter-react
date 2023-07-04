@@ -1,13 +1,9 @@
 import { StyledHeader, Title } from "./styled";
-import { ThemeProvider } from "styled-components";
-import { theme } from "../theme";
 
 const Header = () => (
-  <ThemeProvider theme={theme}>
-    <StyledHeader>
-      <Title>Kalkulator waluty Euro</Title>
-    </StyledHeader>
-  </ThemeProvider>
+  <StyledHeader>
+    <Title>Kalkulator waluty Euro</Title>
+  </StyledHeader>
 );
 
 export default Header;

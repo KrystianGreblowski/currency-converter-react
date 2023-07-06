@@ -1,10 +1,8 @@
 import { StyledCurrentDate } from "./styled";
 import { useCurrentDate } from "./useCurrentDate";
 
-const CurrentDate = () => {
-  const currentDate = useCurrentDate();
-
-  const date = currentDate.toLocaleDateString("pl", {
+const formatDate = (date) =>
+  date.toLocaleDateString("pl", {
     month: "long",
     weekday: "long",
     day: "numeric",
@@ -13,7 +11,14 @@ const CurrentDate = () => {
     second: "numeric",
   });
 
-  return <StyledCurrentDate>Dzisiaj jest {date}</StyledCurrentDate>;
+const CurrentDate = () => {
+  const currentDate = useCurrentDate();
+
+  return (
+    <StyledCurrentDate>
+      Dzisiaj jest {formatDate(currentDate)}
+    </StyledCurrentDate>
+  );
 };
 
 export default CurrentDate;

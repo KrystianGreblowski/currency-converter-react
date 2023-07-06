@@ -15,11 +15,11 @@ export const Fieldset = styled.fieldset`
 
 export const Legend = styled.legend`
   padding: 8px;
-  background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.font};
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => theme.color.font};
   font-size: 17px;
   border-radius: 3px;
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.colors.shadow};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
 `;
 
 export const Content = styled.div`
@@ -27,7 +27,7 @@ export const Content = styled.div`
   grid-template-columns: 1fr 2fr;
   grid-gap: 10px;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: 1fr;
   }
 `;
@@ -57,13 +57,17 @@ export const Select = styled(Label)`
   transition: 0.2s;
 
   &:hover {
-    background-color: hsl(0, 0%, 85%);
+    filter: brightness(110%);
+  }
+
+  &:active {
+    filter: brightness(110%);
   }
 `;
 
 export const Result = styled(Label)`
-  background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.font};
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.colors.shadow};
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => theme.color.font};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
   border: none;
 `;

@@ -1,10 +1,10 @@
 import styled from "styled-components";
 
 export const StyledHeader = styled.header`
-  background-color: ${({ theme }) => theme.colors.background};
-  color: ${({ theme }) => theme.colors.font};
+  background-color: ${({ theme }) => theme.color.background};
+  color: ${({ theme }) => theme.color.font};
   border-radius: 3px;
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.colors.shadow};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
 `;
 
 export const Title = styled.h1`

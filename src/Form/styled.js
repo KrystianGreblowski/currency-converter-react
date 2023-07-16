@@ -14,10 +14,10 @@ export const Fieldset = styled.fieldset`
 `;
 
 export const Legend = styled.legend`
-  padding: 8px;
+  padding: 8px 15px;
   background-color: ${({ theme }) => theme.color.background};
   color: ${({ theme }) => theme.color.font};
-  font-size: 17px;
+  font-size: 20px;
   border-radius: 3px;
   box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
 `;

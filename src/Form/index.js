@@ -45,7 +45,7 @@ const Form = () => {
   return (
     <StyledForm onSubmit={onFormSubmit}>
       <Fieldset>
-        <Legend>Przelicznik EUR/PLN</Legend>
+        <Legend>Kalkulator walut</Legend>
 
         <Content>
           <CurrentDate />

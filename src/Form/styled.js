@@ -28,7 +28,7 @@ export const Content = styled.div`
   grid-gap: 10px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    grid-template-columns: 1fr;
+    grid-template-columns: 250px;
   }
 `;
 

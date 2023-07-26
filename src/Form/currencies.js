@@ -7,8 +7,14 @@ export const currencies = [
   },
   {
     id: 2,
-    name: "Polski Złoty",
-    shortName: "PLN",
-    rate: 0.2209,
+    name: "Dolar amerykański",
+    shortName: "USD",
+    rate: 4.2232,
+  },
+  {
+    id: 3,
+    name: "Funt brytyjski",
+    shortName: "GBP",
+    rate: 4.9954,
   },
 ];

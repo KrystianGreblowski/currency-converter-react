@@ -7,7 +7,6 @@ import {
   Input,
   Select,
   Result,
-  Container,
 } from "./styled";
 import { useState } from "react";
 import { currencies } from "./currencies";
@@ -16,23 +15,18 @@ import CurrentDate from "./CurrentDate";
 const Form = () => {
   const [inputValue, setInputValue] = useState("");
   const [rate, setRate] = useState(currencies[0].rate);
-  const [currency, setCurrency] = useState(currencies[0].name);
+  const [currency, setCurrency] = useState(currencies[0].shortName);
 
-  const toggleCurrencyName = () => {
-    return currency === currencies[0].name
-      ? currencies[1].name
-      : currencies[0].name;
-  };
-
-  const toggleCurrencyRate = () => {
-    currency === currencies[0].name
-      ? setRate(currencies[1].rate)
-      : setRate(currencies[0].rate);
+  const setCurrencyRate = (currencyName) => {
+    const index = currencies.findIndex(
+      ({ shortName }) => shortName === currencyName
+    );
+    setRate(currencies[index].rate);
   };
 
   const onSelectCurrency = ({ target }) => {
     setCurrency(target.value);
-    toggleCurrencyRate();
+    setCurrencyRate(target.value);
   };
 
   const calculateResult = () => {
@@ -50,37 +44,35 @@ const Form = () => {
         <Content>
           <CurrentDate />
 
+          <Label>Waluta</Label>
+
+          <Select as="select" value={currency} onChange={onSelectCurrency}>
+            {currencies.map(({ id, name, shortName }) => (
+              <option key={id} value={shortName}>
+                {name}
+              </option>
+            ))}
+          </Select>
+
           <Label>Kwota</Label>
 
-          <Container>
-            <Input
-              as="input"
-              value={inputValue}
-              onChange={({ target }) => setInputValue(target.value)}
-              type="number"
-              placeholder="0.00"
-            />
-
-            <Select as="select" value={currency} onChange={onSelectCurrency}>
-              {currencies.map(({ id, name }) => (
-                <option key={id} value={name}>
-                  {name}
-                </option>
-              ))}
-            </Select>
-          </Container>
+          <Input
+            as="input"
+            value={inputValue}
+            onChange={({ target }) => setInputValue(target.value)}
+            type="number"
+            placeholder="0.00"
+          />
 
           <Label>Kurs</Label>
 
           <Label>
-            1 {currency} = {rate} {toggleCurrencyName()}
+            1 {currency} = {rate} PLN
           </Label>
 
           <Label>Wynik</Label>
 
-          <Result>
-            {calculateResult()} {toggleCurrencyName()}
-          </Result>
+          <Result>{calculateResult()} PLN</Result>
         </Content>
       </Fieldset>
     </StyledForm>

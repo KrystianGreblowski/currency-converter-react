@@ -24,18 +24,12 @@ export const Legend = styled.legend`
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: 1fr 2fr;
+  grid-template-columns: 90px 300px;
   grid-gap: 10px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-template-columns: 1fr;
   }
-`;
-
-export const Container = styled.div`
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  grid-gap: 10px;
 `;
 
 export const Label = styled.span`

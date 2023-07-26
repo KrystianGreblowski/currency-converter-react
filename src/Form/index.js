@@ -8,33 +8,20 @@ import {
   Select,
   Result,
 } from "./styled";
-import { useState } from "react";
-import { currencies } from "./currencies";
 import CurrentDate from "./CurrentDate";
+import { currencies } from "./currencies";
+import { useCurrency } from "./useCurrency";
 
 const Form = () => {
-  const [inputValue, setInputValue] = useState("");
-  const [rate, setRate] = useState(currencies[0].rate);
-  const [currency, setCurrency] = useState(currencies[0].shortName);
-
-  const setCurrencyRate = (currencyName) => {
-    const index = currencies.findIndex(
-      ({ shortName }) => shortName === currencyName
-    );
-    setRate(currencies[index].rate);
-  };
-
-  const onSelectCurrency = ({ target }) => {
-    setCurrency(target.value);
-    setCurrencyRate(target.value);
-  };
-
-  const calculateResult = () => {
-    const result = (inputValue * rate).toFixed(2);
-    return result > 0 ? result : "0.00";
-  };
-
-  const onFormSubmit = (event) => event.preventDefault();
+  const {
+    inputValue,
+    rate,
+    currency,
+    setInputValue,
+    onFormSubmit,
+    onSelectCurrency,
+    calculateResult,
+  } = useCurrency();
 
   return (
     <StyledForm onSubmit={onFormSubmit}>

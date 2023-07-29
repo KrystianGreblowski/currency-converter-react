@@ -64,7 +64,11 @@ const Form = () => {
 
           <Label>Wynik</Label>
 
-          <Result>{calculateResult()} PLN</Result>
+          {/* <Result>{calculateResult()} PLN</Result> */}
+          <Container>
+            <Result>{calculateResult()}</Result>
+            <Result>PLN</Result>
+          </Container>
         </Content>
       </Fieldset>
     </StyledForm>

@@ -22,5 +22,5 @@ export const useRatesData = () => {
   const currencyName = Object.keys(ratesData.rates);
   const currencyRate = Object.values(ratesData.rates);
 
-  return {currencyName, currencyRate};
+  return { currencyName, currencyRate };
 };

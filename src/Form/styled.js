@@ -44,7 +44,7 @@ export const Label = styled.span`
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 50px;
-  grid-gap: 10px;
+  grid-gap: 7px;
 `;
 
 export const Input = styled(Label)`

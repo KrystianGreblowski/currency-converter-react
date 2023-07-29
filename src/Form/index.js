@@ -32,16 +32,6 @@ const Form = () => {
         <Content>
           <CurrentDate />
 
-          <Label>Waluta</Label>
-
-          <Select as="select" value={currency} onChange={onSelectCurrency}>
-            {currencies.map(({ id, name, shortName }) => (
-              <option key={id} value={shortName}>
-                {name}
-              </option>
-            ))}
-          </Select>
-
           <Label>Kwota</Label>
 
           <Container>
@@ -52,21 +42,30 @@ const Form = () => {
               type="number"
               placeholder="0.00"
             />
-
-            <Label>{currency}</Label>
+            <Label>PLN</Label>
           </Container>
+
+          <Label>Waluta</Label>
+
+          <Select as="select" value={currency} onChange={onSelectCurrency}>
+            {currencies.map(({ id, name, shortName }) => (
+              <option key={id} value={shortName}>
+                {name}
+              </option>
+            ))}
+          </Select>
 
           <Label>Kurs</Label>
 
           <Label>
-            1 {currency} = {rate} PLN
+            1 PLN = {rate} {currency}
           </Label>
 
           <Label>Wynik</Label>
 
           <Container>
             <Result>{calculateResult()}</Result>
-            <Result>PLN</Result>
+            <Result>{currency}</Result>
           </Container>
         </Content>
       </Fieldset>

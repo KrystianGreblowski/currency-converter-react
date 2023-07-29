@@ -10,7 +10,6 @@ import {
   Result,
 } from "./styled";
 import CurrentDate from "./CurrentDate";
-import { currencies } from "./currencies";
 import { useCurrency } from "./useCurrency";
 
 const Form = () => {
@@ -18,6 +17,7 @@ const Form = () => {
     inputValue,
     rate,
     currency,
+    currencyName,
     setInputValue,
     onFormSubmit,
     onSelectCurrency,
@@ -48,9 +48,9 @@ const Form = () => {
           <Label>Waluta</Label>
 
           <Select as="select" value={currency} onChange={onSelectCurrency}>
-            {currencies.map(({ id, name, shortName }) => (
-              <option key={id} value={shortName}>
-                {name}
+            {currencyName.map((currencyShortName, index) => (
+              <option key={index} value={currencyShortName}>
+                {currencyShortName}
               </option>
             ))}
           </Select>

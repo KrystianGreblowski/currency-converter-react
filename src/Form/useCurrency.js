@@ -1,18 +1,21 @@
 import { useState } from "react";
-import { currencies } from "./currencies";
+import { useRatesData } from "./useRatesData";
 
 export const useCurrency = () => {
+  const { currencyName, currencyRate } = useRatesData();
+
   const [inputValue, setInputValue] = useState("");
-  const [rate, setRate] = useState(currencies[0].rate);
-  const [currency, setCurrency] = useState(currencies[0].shortName);
+  const [rate, setRate] = useState(currencyRate[0]);
+  const [currency, setCurrency] = useState(currencyName[0]);
 
   const onFormSubmit = (event) => event.preventDefault();
 
-  const setCurrencyRate = (currencyName) => {
-    const index = currencies.findIndex(
-      ({ shortName }) => shortName === currencyName
+  const setCurrencyRate = (currencyShortName) => {
+    const index = currencyName.findIndex(
+      (element) => element === currencyShortName
     );
-    setRate(currencies[index].rate);
+
+    setRate(currencyRate[index]);
   };
 
   const onSelectCurrency = ({ target }) => {
@@ -29,6 +32,7 @@ export const useCurrency = () => {
     inputValue,
     rate,
     currency,
+    currencyName,
     setInputValue,
     onFormSubmit,
     onSelectCurrency,

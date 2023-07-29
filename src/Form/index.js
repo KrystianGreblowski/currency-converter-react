@@ -4,6 +4,7 @@ import {
   Legend,
   Content,
   Label,
+  Container,
   Input,
   Select,
   Result,
@@ -43,13 +44,17 @@ const Form = () => {
 
           <Label>Kwota</Label>
 
-          <Input
-            as="input"
-            value={inputValue}
-            onChange={({ target }) => setInputValue(target.value)}
-            type="number"
-            placeholder="0.00"
-          />
+          <Container>
+            <Input
+              as="input"
+              value={inputValue}
+              onChange={({ target }) => setInputValue(target.value)}
+              type="number"
+              placeholder="0.00"
+            />
+
+            <Label>{currency}</Label>
+          </Container>
 
           <Label>Kurs</Label>
 

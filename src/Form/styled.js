@@ -41,6 +41,12 @@ export const Label = styled.span`
   background-color: #eee;
 `;
 
+export const Container = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  grid-gap: 10px;
+`;
+
 export const Input = styled(Label)`
   background-color: white;
 `;

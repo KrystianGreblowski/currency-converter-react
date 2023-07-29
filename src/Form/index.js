@@ -64,7 +64,6 @@ const Form = () => {
 
           <Label>Wynik</Label>
 
-          {/* <Result>{calculateResult()} PLN</Result> */}
           <Container>
             <Result>{calculateResult()}</Result>
             <Result>PLN</Result>

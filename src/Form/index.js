@@ -8,6 +8,7 @@ import {
   Input,
   Select,
   Result,
+  Loading,
 } from "./styled";
 import CurrentDate from "./CurrentDate";
 import { useCurrency } from "./useCurrency";
@@ -17,7 +18,7 @@ const Form = () => {
     inputValue,
     rate,
     currency,
-    currencyName,
+    ratesData,
     setInputValue,
     onFormSubmit,
     onSelectCurrency,
@@ -29,45 +30,49 @@ const Form = () => {
       <Fieldset>
         <Legend>Kalkulator walut</Legend>
 
-        <Content>
-          <CurrentDate />
+        {ratesData.state === "loading" ? (
+          <Loading>Ładowanie strony</Loading>
+        ) : (
+          <Content>
+            <CurrentDate />
 
-          <Label>Kwota</Label>
+            <Label>Kwota</Label>
 
-          <Container>
-            <Input
-              as="input"
-              value={inputValue}
-              onChange={({ target }) => setInputValue(target.value)}
-              type="number"
-              placeholder="0.00"
-            />
-            <Label>PLN</Label>
-          </Container>
+            <Container>
+              <Input
+                as="input"
+                value={inputValue}
+                onChange={({ target }) => setInputValue(target.value)}
+                type="number"
+                placeholder="0.00"
+              />
+              <Label>PLN</Label>
+            </Container>
 
-          <Label>Waluta</Label>
+            <Label>Waluta</Label>
 
-          <Select as="select" value={currency} onChange={onSelectCurrency}>
-            {currencyName.map((currencyShortName, index) => (
-              <option key={index} value={currencyShortName}>
-                {currencyShortName}
-              </option>
-            ))}
-          </Select>
+            <Select as="select" value={currency} onChange={onSelectCurrency}>
+              {Object.keys(ratesData.rates).map((currencyShortName, index) => (
+                <option key={index} value={currencyShortName}>
+                  {currencyShortName}
+                </option>
+              ))}
+            </Select>
 
-          <Label>Kurs</Label>
+            <Label>Kurs</Label>
 
-          <Label>
-            1 PLN = {rate} {currency}
-          </Label>
+            <Label>
+              1 PLN = {rate} {currency}
+            </Label>
 
-          <Label>Wynik</Label>
+            <Label>Wynik</Label>
 
-          <Container>
-            <Result>{calculateResult()}</Result>
-            <Result>{currency}</Result>
-          </Container>
-        </Content>
+            <Container>
+              <Result>{calculateResult()}</Result>
+              <Result>{currency}</Result>
+            </Container>
+          </Content>
+        )}
       </Fieldset>
     </StyledForm>
   );

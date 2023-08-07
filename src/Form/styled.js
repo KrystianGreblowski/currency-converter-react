@@ -82,3 +82,18 @@ export const Loading = styled.p`
     max-width: 250px;
   }
 `;
+
+export const RatesDate = styled.span`
+  font-size: 14px;
+  color: #989696;
+  text-align: center;
+  grid-column: span 2;
+  justify-self: right;
+  padding: 0;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    grid-column: span 1;
+    justify-self: center;
+    padding: 5px;
+  }
+`;

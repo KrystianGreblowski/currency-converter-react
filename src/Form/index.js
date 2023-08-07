@@ -9,6 +9,7 @@ import {
   Select,
   Result,
   Loading,
+  RatesDate,
 } from "./styled";
 import CurrentDate from "./CurrentDate";
 import { useCurrency } from "./useCurrency";
@@ -31,10 +32,14 @@ const Form = () => {
         <Legend>Kalkulator walut</Legend>
 
         {ratesData.state === "loading" ? (
-          <Loading>Trwa ładowanie danych z Europejskiego Banku Centralnego</Loading>
+          <Loading>
+            Trwa ładowanie danych z Europejskiego Banku Centralnego
+          </Loading>
         ) : (
           <Content>
             <CurrentDate />
+
+            <RatesDate>Kursy aktualne na dzień {ratesData.date}</RatesDate>
 
             <Label>Kwota</Label>
 

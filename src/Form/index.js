@@ -31,7 +31,7 @@ const Form = () => {
         <Legend>Kalkulator walut</Legend>
 
         {ratesData.state === "loading" ? (
-          <Loading>Ładowanie strony</Loading>
+          <Loading>Trwa ładowanie danych z Europejskiego Banku Centralnego</Loading>
         ) : (
           <Content>
             <CurrentDate />

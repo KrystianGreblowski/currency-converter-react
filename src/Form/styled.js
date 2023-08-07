@@ -71,3 +71,14 @@ export const Result = styled(Label)`
   box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
   border: none;
 `;
+
+export const Loading = styled.p`
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+  font-size: 20px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
+    max-width: 250px;
+  }
+`;

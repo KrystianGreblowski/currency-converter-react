@@ -37,7 +37,7 @@ export const useCurrency = () => {
       setRate(rate => rate = Object.values(currencyRates.rates)[0])
     };
 
-    setTimeout(loadingData, 1000);
+    setTimeout(loadingData, 1500);
   }, []);
 
   const onFormSubmit = (event) => event.preventDefault();

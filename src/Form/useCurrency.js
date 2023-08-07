@@ -33,8 +33,12 @@ export const useCurrency = () => {
         (ratesData) => (ratesData = { ...currencyRates, state: "done" })
       );
 
-      setCurrency((currency) => (currency = Object.keys(currencyRates.rates)[0]));
-      setRate(rate => rate = Object.values(currencyRates.rates)[0])
+      setCurrency(
+        (currency) => (currency = Object.keys(currencyRates.rates)[0])
+      );
+      setRate(
+        (rate) => (rate = Object.values(currencyRates.rates)[0].toFixed(4))
+      );
     };
 
     setTimeout(loadingData, 1500);
@@ -47,7 +51,7 @@ export const useCurrency = () => {
       (element) => element === currencyShortName
     );
 
-    setRate(Object.values(ratesData.rates)[index]);
+    setRate(Object.values(ratesData.rates)[index].toFixed(4));
   };
 
   const onSelectCurrency = ({ target }) => {

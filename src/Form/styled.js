@@ -76,7 +76,7 @@ export const Loading = styled.p`
   max-width: 400px;
   padding: 20px;
   text-align: center;
-  font-size: 20px;
+  font-size: 17px;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: 250px;

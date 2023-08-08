@@ -39,8 +39,6 @@ const Form = () => {
           <Content>
             <CurrentDate />
 
-            <RatesDate>Kursy aktualne na dzień {ratesData.date}</RatesDate>
-
             <Label>Kwota</Label>
 
             <Container>
@@ -76,6 +74,11 @@ const Form = () => {
               <Result>{calculateResult()}</Result>
               <Result>{currency}</Result>
             </Container>
+
+            <RatesDate>
+              Kursy walut pobierane są z Europejskiego Banku Centralnego.
+              Aktualne na dzień: {ratesData.date}
+            </RatesDate>
           </Content>
         )}
       </Fieldset>

@@ -84,8 +84,8 @@ export const Loading = styled.p`
 `;
 
 export const RatesDate = styled.span`
-  font-size: 14px;
-  color: #989696;
+  font-size: 12px;
+  color: red;
   text-align: center;
   grid-column: span 2;
   justify-self: right;

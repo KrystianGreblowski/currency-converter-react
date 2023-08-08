@@ -9,7 +9,7 @@ export const Fieldset = styled.fieldset`
   background-color: #fcfbfb;
   border: 1px solid #aaa;
   padding: 10px;
-  border-radius: 3px;
+  border-radius: 6px;
   box-shadow: 1px 1px 3px hsl(0, 0%, 50%);
 `;
 

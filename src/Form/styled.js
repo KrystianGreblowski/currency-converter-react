@@ -83,6 +83,10 @@ export const Loading = styled.p`
   }
 `;
 
+export const Error = styled(Loading)`
+  color: red;
+`;
+
 export const RatesDate = styled.span`
   font-size: 12px;
   color: red;

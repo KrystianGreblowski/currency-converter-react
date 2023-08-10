@@ -9,6 +9,7 @@ import {
   Select,
   Result,
   Loading,
+  Error,
   RatesDate,
 } from "./styled";
 import CurrentDate from "./CurrentDate";
@@ -35,6 +36,11 @@ const Form = () => {
           <Loading>
             Trwa ładowanie danych z Europejskiego Banku Centralnego
           </Loading>
+        ) : ratesData.state === "error" ? (
+          <Error>
+            Coś poszło nie tak. Sprawdź czy masz połączenie z Internetem. Jeśli
+            tak, to wina leży po naszej stronie. Spróbuj później.
+          </Error>
         ) : (
           <Content>
             <CurrentDate />

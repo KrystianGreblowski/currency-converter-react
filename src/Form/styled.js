@@ -94,7 +94,6 @@ export const RatesDate = styled.span`
   grid-column: span 2;
   justify-self: right;
 
-
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     grid-column: span 1;
     justify-self: center;

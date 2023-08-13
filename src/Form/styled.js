@@ -1,25 +1,26 @@
 import styled from "styled-components";
 
 export const StyledForm = styled.form`
-  max-width: 400px;
+  max-width: ${({ theme }) => theme.applicationWidth.max}px;
   justify-self: center;
 `;
 
 export const Fieldset = styled.fieldset`
-  background-color: #fcfbfb;
-  border: 1px solid #aaa;
+  background-color: ${({ theme }) => theme.color.fieldset.background};
+  color: ${({ theme }) => theme.color.fieldset.font};
+  border: 1px solid ${({ theme }) => theme.color.fieldset.border};
   padding: 10px;
   border-radius: 6px;
-  box-shadow: 1px 1px 3px hsl(0, 0%, 50%);
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.fieldset.shadow};
 `;
 
 export const Legend = styled.legend`
   padding: 8px 15px;
-  background-color: ${({ theme }) => theme.color.background};
-  color: ${({ theme }) => theme.color.font};
+  background-color: ${({ theme }) => theme.color.legend.background};
+  color: ${({ theme }) => theme.color.legend.font};
   font-size: 20px;
   border-radius: 3px;
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.legend.shadow};
 `;
 
 export const Content = styled.div`
@@ -33,12 +34,13 @@ export const Content = styled.div`
 `;
 
 export const Label = styled.span`
-  border: 1px solid #ccc;
+  background-color: ${({ theme }) => theme.color.label.background};
+  color: ${({ theme }) => theme.color.label.font};
+  border: 1px solid ${({ theme }) => theme.color.label.border};
   border-radius: 3px;
   padding: 6px;
-  box-shadow: 1px 1px 3px #706f6f;
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.label.shadow};
   text-align: center;
-  background-color: #eee;
 `;
 
 export const Container = styled.div`
@@ -48,7 +50,8 @@ export const Container = styled.div`
 `;
 
 export const Input = styled(Label)`
-  background-color: white;
+  background-color: ${({ theme }) => theme.color.input.background};
+  color: ${({ theme }) => theme.color.input.font};
 `;
 
 export const Select = styled(Label)`
@@ -57,34 +60,35 @@ export const Select = styled(Label)`
   transition: 0.2s;
 
   &:hover {
-    filter: brightness(110%);
+    filter: brightness(${({ theme }) => theme.brightness}%);
   }
 
   &:active {
-    filter: brightness(110%);
+    filter: brightness(${({ theme }) => theme.brightness}%);
   }
 `;
 
 export const Result = styled(Label)`
-  background-color: ${({ theme }) => theme.color.background};
-  color: ${({ theme }) => theme.color.font};
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.shadow};
+  background-color: ${({ theme }) => theme.color.result.background};
+  color: ${({ theme }) => theme.color.result.font};
+  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.result.shadow};
   border: none;
 `;
 
 export const Loading = styled.p`
-  max-width: 400px;
+  max-width: ${({ theme }) => theme.applicationWidth.max}px;
   padding: 20px;
   text-align: center;
   font-size: 17px;
+  color: ${({ theme }) => theme.color.loading.font};
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
-    max-width: 250px;
+    max-width: ${({ theme }) => theme.applicationWidth.mobileMax}px;
   }
 `;
 
 export const Error = styled(Loading)`
-  color: red;
+  color: ${({ theme }) => theme.color.error.font};
 `;
 
 export const RatesDate = styled.span`

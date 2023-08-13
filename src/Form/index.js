@@ -34,7 +34,7 @@ const Form = () => {
 
         {ratesData.state === "loading" ? (
           <Loading>
-            Trwa ładowanie danych z Europejskiego Banku Centralnego
+            Trwa ładowanie danych z Europejskiego Banku Centralnego.
           </Loading>
         ) : ratesData.state === "error" ? (
           <Error>

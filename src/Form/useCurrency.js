@@ -20,7 +20,6 @@ export const useCurrency = () => {
           setRatesData(
             (ratesData) => (ratesData = { ...currencyRates, state: "done" })
           );
-
           setCurrency(
             (currency) => (currency = Object.keys(currencyRates.rates)[0])
           );
@@ -33,7 +32,7 @@ export const useCurrency = () => {
         );
     };
 
-    setTimeout(loadingData, 1500);
+    setTimeout(loadingData, 1000);
   }, []);
 
   const onFormSubmit = (event) => event.preventDefault();

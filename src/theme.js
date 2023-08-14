@@ -46,5 +46,5 @@ export const theme = {
     mobileMax: 250,
   },
 
-  brightness: 100,
+  brightness: 110,
 };

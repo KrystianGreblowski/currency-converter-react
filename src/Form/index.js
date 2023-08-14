@@ -46,21 +46,6 @@ const Form = () => {
           <Content>
             <CurrentDate />
 
-            <Label>Kwota</Label>
-
-            <Container>
-              <Input
-                as="input"
-                value={checkInputValue(inputValue)}
-                onChange={({ target }) => setInputValue(target.value)}
-                type="number"
-                min="0.00"
-                step="0.01"
-                placeholder="0.00"
-              />
-              <Label>PLN</Label>
-            </Container>
-
             <Label>Waluta</Label>
 
             <Select as="select" value={currency} onChange={onSelectCurrency}>
@@ -76,6 +61,21 @@ const Form = () => {
             <Label>
               1 PLN = {rate} {currency}
             </Label>
+
+            <Label>Kwota</Label>
+
+            <Container>
+              <Input
+                as="input"
+                value={checkInputValue(inputValue)}
+                onChange={({ target }) => setInputValue(target.value)}
+                type="number"
+                min="0.00"
+                step="0.01"
+                placeholder="0.00"
+              />
+              <Label>PLN</Label>
+            </Container>
 
             <Label>Wynik</Label>
 

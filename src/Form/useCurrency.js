@@ -6,9 +6,11 @@ export const useCurrency = () => {
   const [rate, setRate] = useState("");
   const [ratesData, setRatesData] = useState({ state: "loading" });
 
+  const apiAdress = "https://api.exchangerate.host/latest?base=PLN";
+
   useEffect(() => {
     const loadingData = () => {
-      fetch("https://api.exchangerate.host/latest?base=PLN")
+      fetch(apiAdress)
         .then((response) => {
           if (!response.ok) {
             throw new Error(response.statusText);

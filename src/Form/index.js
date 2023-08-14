@@ -4,6 +4,7 @@ import {
   Legend,
   Content,
   Label,
+  Currency,
   Container,
   Input,
   Select,
@@ -58,9 +59,9 @@ const Form = () => {
 
             <Label>Kurs</Label>
 
-            <Label>
+            <Currency>
               1 PLN = {rate} {currency}
-            </Label>
+            </Currency>
 
             <Label>Kwota</Label>
 
@@ -74,7 +75,7 @@ const Form = () => {
                 step="0.01"
                 placeholder="0.00"
               />
-              <Label>PLN</Label>
+              <Currency>PLN</Currency>
             </Container>
 
             <Label>Wynik</Label>

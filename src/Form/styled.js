@@ -43,6 +43,10 @@ export const Label = styled.span`
   text-align: center;
 `;
 
+export const Currency = styled(Label)`
+  background-color: ${({ theme }) => theme.color.currency.background};
+`;
+
 export const Container = styled.div`
   display: grid;
   grid-template-columns: 1fr 50px;
@@ -55,6 +59,7 @@ export const Input = styled(Label)`
 `;
 
 export const Select = styled(Label)`
+  background-color: ${({ theme }) => theme.color.currency.background};
   padding: 5px;
   cursor: pointer;
   transition: 0.2s;

@@ -16,10 +16,13 @@ export const theme = {
       shadow: "#7a1818",
     },
     label: {
-      background: "#eee",
+      background: "#d9d6d6",
       font: "#000",
       shadow: "#706f6f",
       border: "#ccc",
+    },
+    currency: {
+      background: "#eee",
     },
     result: {
       background: "#eb3d3d",

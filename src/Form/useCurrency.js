@@ -37,6 +37,12 @@ export const useCurrency = () => {
 
   const onFormSubmit = (event) => event.preventDefault();
 
+  const checkInputValue = (inputValue) => {
+    if (inputValue < 0) return (inputValue = "");
+
+    return inputValue;
+  };
+
   const setCurrencyRate = (currencyShortName) => {
     const index = Object.keys(ratesData.rates).findIndex(
       (element) => element === currencyShortName
@@ -57,6 +63,7 @@ export const useCurrency = () => {
 
   return {
     inputValue,
+    checkInputValue,
     rate,
     currency,
     ratesData,

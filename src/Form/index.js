@@ -18,6 +18,7 @@ import { useCurrency } from "./useCurrency";
 const Form = () => {
   const {
     inputValue,
+    checkInputValue,
     rate,
     currency,
     ratesData,
@@ -50,9 +51,11 @@ const Form = () => {
             <Container>
               <Input
                 as="input"
-                value={inputValue}
+                value={checkInputValue(inputValue)}
                 onChange={({ target }) => setInputValue(target.value)}
                 type="number"
+                min="0.00"
+                step="0.01"
                 placeholder="0.00"
               />
               <Label>PLN</Label>

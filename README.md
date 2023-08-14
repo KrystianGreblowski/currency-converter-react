@@ -15,7 +15,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Preview
 
-![Currency converter demo](https://i.postimg.cc/HxDRTp9m/currency-converter-demo.gif)
+![Currency converter demo](https://i.postimg.cc/fLfZsfpx/currency-converter-demo-M12-2.gif)
 
 ## Technologies
 - React

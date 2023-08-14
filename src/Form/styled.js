@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const StyledForm = styled.form`
   max-width: ${({ theme }) => theme.applicationWidth.max}px;
@@ -6,21 +6,21 @@ export const StyledForm = styled.form`
 `;
 
 export const Fieldset = styled.fieldset`
-  background-color: ${({ theme }) => theme.color.fieldset.background};
-  color: ${({ theme }) => theme.color.fieldset.font};
-  border: 1px solid ${({ theme }) => theme.color.fieldset.border};
+  background-color: #fcfbfb;
+  color: #000;
+  border: 1px solid #aaa;
   padding: 10px;
   border-radius: 6px;
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.fieldset.shadow};
+  box-shadow: 1px 1px 3px #808080;
 `;
 
 export const Legend = styled.legend`
   padding: 8px 15px;
-  background-color: ${({ theme }) => theme.color.legend.background};
-  color: ${({ theme }) => theme.color.legend.font};
+  background-color: #eb3d3d;
+  color: #fff;
   font-size: 20px;
   border-radius: 3px;
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.legend.shadow};
+  box-shadow: 1px 1px 3px #7a1818;
 `;
 
 export const Content = styled.div`
@@ -34,17 +34,19 @@ export const Content = styled.div`
 `;
 
 export const Label = styled.span`
-  background-color: ${({ theme }) => theme.color.label.background};
-  color: ${({ theme }) => theme.color.label.font};
-  border: 1px solid ${({ theme }) => theme.color.label.border};
+  background-color: #d9d6d6;
+  color: #000;
+  border: 1px solid #ccc;
   border-radius: 3px;
   padding: 6px;
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.label.shadow};
+  box-shadow: 1px 1px 3px #706f6f;
   text-align: center;
-`;
 
-export const Currency = styled(Label)`
-  background-color: ${({ theme }) => theme.color.currency.background};
+  ${({ labelValue }) =>
+    labelValue &&
+    css`
+      background-color: #eee;
+    `}
 `;
 
 export const Container = styled.div`
@@ -53,30 +55,35 @@ export const Container = styled.div`
   grid-gap: 7px;
 `;
 
-export const Input = styled(Label)`
-  background-color: ${({ theme }) => theme.color.input.background};
-  color: ${({ theme }) => theme.color.input.font};
+export const Input = styled.span`
+  background-color: #fff;
+  color: #000;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 6px;
+  box-shadow: 1px 1px 3px #706f6f;
+  text-align: center;
 `;
 
 export const Select = styled(Label)`
-  background-color: ${({ theme }) => theme.color.currency.background};
+  background-color: #eee;
   padding: 5px;
   cursor: pointer;
   transition: 0.2s;
 
   &:hover {
-    filter: brightness(${({ theme }) => theme.brightness}%);
+    filter: brightness(110%);
   }
 
   &:active {
-    filter: brightness(${({ theme }) => theme.brightness}%);
+    filter: brightness(110%);
   }
 `;
 
 export const Result = styled(Label)`
-  background-color: ${({ theme }) => theme.color.result.background};
-  color: ${({ theme }) => theme.color.result.font};
-  box-shadow: 1px 1px 3px ${({ theme }) => theme.color.result.shadow};
+  background-color: #eb3d3d;
+  color: #fff;
+  box-shadow: 1px 1px 3px #7a1818;
   border: none;
 `;
 
@@ -85,7 +92,7 @@ export const Loading = styled.p`
   padding: 20px;
   text-align: center;
   font-size: 17px;
-  color: ${({ theme }) => theme.color.loading.font};
+  color: #000;
 
   @media (max-width: ${({ theme }) => theme.breakpoint.mobileMax}px) {
     max-width: ${({ theme }) => theme.applicationWidth.mobileMax}px;
@@ -93,7 +100,7 @@ export const Loading = styled.p`
 `;
 
 export const Error = styled(Loading)`
-  color: ${({ theme }) => theme.color.error.font};
+  color: #ff0000;
 `;
 
 export const RatesDate = styled.span`

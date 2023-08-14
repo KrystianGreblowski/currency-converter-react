@@ -48,7 +48,12 @@ const Form = () => {
 
             <Label>Waluta</Label>
 
-            <Select as="select" value={currency} onChange={onSelectCurrency}>
+            <Select
+              as="select"
+              labelValue
+              value={currency}
+              onChange={onSelectCurrency}
+            >
               {Object.keys(ratesData.rates).map((currencyShortName, index) => (
                 <option key={index} value={currencyShortName}>
                   {currencyShortName}
@@ -66,7 +71,6 @@ const Form = () => {
 
             <Container>
               <Input
-                as="input"
                 value={checkInputValue(inputValue)}
                 onChange={({ target }) => setInputValue(target.value)}
                 type="number"

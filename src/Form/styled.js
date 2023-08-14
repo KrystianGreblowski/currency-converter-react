@@ -55,7 +55,7 @@ export const Container = styled.div`
   grid-gap: 7px;
 `;
 
-export const Input = styled.span`
+export const Input = styled.input`
   background-color: #fff;
   color: #000;
   border: 1px solid #ccc;

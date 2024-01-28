@@ -70,6 +70,7 @@ export const useCurrency = () => {
 
   const getExchangeRateDate = () => {
     const exchangeRateDate = new Date(date).toLocaleDateString("pl");
+
     return exchangeRateDate;
   };
 

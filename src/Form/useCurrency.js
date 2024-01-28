@@ -65,6 +65,7 @@ export const useCurrency = () => {
 
   const calculateResult = () => {
     const result = (inputValue * rate).toFixed(2);
+
     return result > 0 ? result : "0.00";
   };
 

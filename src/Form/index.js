@@ -26,6 +26,7 @@ const Form = () => {
     onFormSubmit,
     onSelectCurrency,
     calculateResult,
+    getExchangeRateDate,
   } = useCurrency();
 
   return (
@@ -54,7 +55,7 @@ const Form = () => {
               value={currency}
               onChange={onSelectCurrency}
             >
-              {Object.keys(ratesData.rates).map((currencyShortName, index) => (
+              {Object.keys(ratesData.data).map((currencyShortName, index) => (
                 <option key={index} value={currencyShortName}>
                   {currencyShortName}
                 </option>
@@ -90,7 +91,7 @@ const Form = () => {
 
             <RatesDate>
               Kursy walut pobierane są z Europejskiego Banku Centralnego.
-              Aktualne na dzień: {ratesData.date}
+              Aktualne na dzień: {getExchangeRateDate()}
             </RatesDate>
           </Content>
         )}

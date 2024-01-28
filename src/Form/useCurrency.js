@@ -77,10 +77,10 @@ export const useCurrency = () => {
 
   return {
     inputValue,
-    checkInputValue,
     rate,
     currency,
     ratesData,
+    checkInputValue,
     setInputValue,
     onFormSubmit,
     onSelectCurrency,

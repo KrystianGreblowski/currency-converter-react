@@ -18,10 +18,10 @@ import { useCurrency } from "./useCurrency";
 const Form = () => {
   const {
     inputValue,
-    checkInputValue,
     rate,
     currency,
     ratesData,
+    checkInputValue,
     setInputValue,
     onFormSubmit,
     onSelectCurrency,

@@ -2,10 +2,9 @@
 
 ## Description
 
-It's a currency converter for Polish currency to other. 
-The latest exchange rates are downloaded from https://exchangerate.host/#/ 
+It's a currency converter for Polish currency to others. It's an application I created as part of a project for the YouCode Frontend Developer course.
 
-It's an application I created as part of a project for the YouCode Frontend Developer course.
+The latest exchange rates are downloaded from https://exchangerate.host/#/ 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
